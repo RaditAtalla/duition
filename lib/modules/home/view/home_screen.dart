@@ -1,4 +1,5 @@
 import 'package:duition/constants/colors.dart';
+import 'package:duition/widgets/daily_budget_bottom_modal.dart';
 import 'package:duition/widgets/history_card.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,15 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 5),
                     FilledButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (BuildContext context) {
+                            return DailyBudgetBottomModal();
+                          },
+                        );
+                      },
                       style: FilledButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           horizontal: 10,
@@ -155,9 +164,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Text(
                           "/ Rp1.200.000",
-                          style: TextStyle(
-                            color: AppColors.primaryLight,
-                          ),
+                          style: TextStyle(color: AppColors.primaryLight),
                         ),
                       ],
                     ),
