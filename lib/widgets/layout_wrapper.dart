@@ -2,7 +2,7 @@ import 'package:duition/constants/colors.dart';
 import 'package:duition/modules/entry/view/entry_screen.dart';
 import 'package:duition/modules/home/view/home_screen.dart';
 import 'package:duition/modules/insight/view/insight_screen.dart';
-import 'package:duition/modules/plan/view/plan_screen.dart';
+import 'package:duition/modules/profile/view/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,7 @@ class _LayoutWrapperState extends State<LayoutWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    var pages = [HomeScreen(), PlanScreen(), InsightScreen()];
+    var pages = [HomeScreen(), InsightScreen(), ProfileScreen()];
 
     return Scaffold(
       appBar: PreferredSize(
@@ -98,16 +98,6 @@ class _LayoutWrapperState extends State<LayoutWrapper> {
             icon: Icon(Icons.home, color: AppColors.primaryLight),
             label: "Home",
             selectedIcon: Icon(Icons.home, color: AppColors.primary),
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.calendar_today, color: AppColors.primaryLight),
-            label: "Plan",
-            selectedIcon: Icon(Icons.calendar_today, color: AppColors.primary),
-          ),
-          NavigationDestination(
-            enabled: false,
-            icon: Icon(Icons.circle, size: 0),
-            label: "",
           ),
           NavigationDestination(
             icon: Icon(Icons.bar_chart, color: AppColors.primaryLight),

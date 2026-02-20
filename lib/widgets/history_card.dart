@@ -53,7 +53,6 @@ class HistoryCard extends StatelessWidget {
               style: TextStyle(
                 color: type == "expense" ? AppColors.red : AppColors.primary,
                 fontSize: 14,
-                fontWeight: FontWeight.bold,
               ),
             ),
             Text(category, style: TextStyle(fontSize: 12, color: AppColors.primaryLight)),

@@ -48,17 +48,20 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 5),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryOpacity,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 5,
+                    FilledButton(
+                      onPressed: () {},
+                      style: FilledButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        backgroundColor: AppColors.primaryOpacity,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                       child: Text(
-                        "On Track",
+                        "Tap to Edit",
                         style: TextStyle(
                           color: AppColors.primary,
                           fontWeight: FontWeight.bold,
@@ -111,7 +114,7 @@ class HomeScreen extends StatelessWidget {
 
             SizedBox(height: 30),
 
-            // Monthly saved and upcoming bills
+            // Balance and Warning
             Row(
               children: [
                 Expanded(
@@ -125,37 +128,42 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("MONTHLY SAVED", style: TextStyle(fontSize: 12)),
-                        Text(
-                          "Rp125.000",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 8),
                         Row(
                           children: [
                             Icon(
-                              Icons.trending_up,
+                              Icons.wallet,
                               color: AppColors.primary,
                               size: 16,
                             ),
                             SizedBox(width: 5),
                             Text(
-                              "12%",
+                              "BALANCE",
                               style: TextStyle(
                                 color: AppColors.primary,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
                               ),
                             ),
                           ],
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          "Rp900.000",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "/ Rp1.200.000",
+                          style: TextStyle(
+                            color: AppColors.primaryLight,
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 10),
                 Expanded(
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
@@ -167,25 +175,16 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("UPCOMING BILLS", style: TextStyle(fontSize: 12)),
-                        Text(
-                          "Rp20.000",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 8),
                         Row(
                           children: [
                             Icon(
-                              Icons.alarm,
+                              Icons.lightbulb,
                               color: AppColors.orange,
                               size: 16,
                             ),
                             SizedBox(width: 5),
                             Text(
-                              "3 Days Left",
+                              "Info",
                               style: TextStyle(
                                 color: AppColors.orange,
                                 fontWeight: FontWeight.bold,
@@ -193,6 +192,15 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
+                        SizedBox(height: 5),
+                        Text(
+                          "You spent too much on Batagor",
+                          style: TextStyle(
+                            color: AppColors.primaryLight,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 8),
                       ],
                     ),
                   ),
@@ -207,7 +215,7 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Aktifitas Terakhir",
+                  "Aktifitas Terbaru",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 TextButton(
